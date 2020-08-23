@@ -1,48 +1,41 @@
 //import everything that we need for npm 
 
 const inquirer= require('inquirer'); 
-console.log("Inquirer", inquirer);
 const fs= require('fs'); 
 const util = require('util'); 
-// const { title } = require('process');
-console.log("fs", fs);
-console.log("util", util); 
+const generateMarkdown = require('./utils/generateMarkdown'); 
 
-//create a promise instead of a callback function to handle asynchronous behavior 
-//promisify is built into the util 
+//create a promise instead of a callback function to handle asynchronous behavior --promisify is built into the util 
+
 const writeFileAsync = util.promisify(fs.writeFile); 
 
+//create prompt questions 
 const promptUser = () => {
     return inquirer.prompt([ 
         {
             type: "input", 
             name: "title", 
-            message: "What is the title of your project"
+            message: "What is the title of your project?"
         }, 
         {
             type: "input", 
             name: "description", 
-            message: "Description of project"
-        },
-        {
-            type: "input", 
-            name: "table", 
-            message: "table of contents"
+            message: "Please provide a description of the project"
         },
         {
             type: "input", 
             name: "installation", 
-            message: "Installation Instructions"
+            message: "What is the installation process?"
         },
         {
             type: "input", 
-            name: "Usage", 
-            message: "Usage Information"
+            name: "usage", 
+            message: "How will this project be used?"
         },
         {
             type: "list", 
-            name: "License", 
-            message: "What kind of license should your project have?",
+            name: "license", 
+            message: "What license is used with this project?",
             choices: [
                 "APACHE 2.8",
                 "GPL 3.0",
@@ -52,45 +45,40 @@ const promptUser = () => {
         },
         {
             type: "input", 
-            name: "contributing", 
-            message: "Contributing Guidelines"
+            name: "contributors", 
+            message: "Who are the contributors to this project?"
         },
         {
             type: "input", 
             name: "test", 
-            message: "Test Instructions"
+            message: "What is the test process for this project"
         },
         {
             type: "input", 
-            name: "questions", 
-            message: "Questions"
-        }
+            name: "github", 
+            message: "What is your Github user ID?"
+        },
+        {
+            type: "input", 
+            name: "email", 
+            message: "What is your email address"
+        },
     ]); 
 }
 
-//string template literals for generating a string version 
-const generateREADME = ({title, description, table, installation, usage, license, contributing, test, questions}) => {
-    // return '
-    // README'; 
-}
-
-//trigger the request for the prompt and store as a variable and run in an async way 
+// // trigger the request for the prompt and store as a variable --run in an async way 
 const init = async () => {
     console.log('starting prompts');
     try {
         //store answers to prompts 
         const answers = await promptUser(); 
         //stored readme in variable 
-        const readme = generateREADME(answers); 
-        //write file (call function becauase we alredy wrote the file) once readme is generated 
-        
-        writeFileAsync('readme', readme);
+        const readme = generateMarkdown(answers); 
+        //write file (just call the function) once readme is generated 
+        writeFileAsync('README.md', readme);
         console.log('successfully wrote to readme.md');
     } catch (error) {
         console.log(error); 
     }
 }; 
     init(); 
-
-
-
