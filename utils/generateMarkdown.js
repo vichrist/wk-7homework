@@ -2,9 +2,10 @@
 
 function generateMarkdown(response) {
   return `
-  #  Project Title: ${response.title}
+  #  Title: ${response.title}
 
-  ## Description: ${response.description}
+  ## Description
+  ${response.description}
 
   ## Table of Contents
 
@@ -14,40 +15,32 @@ function generateMarkdown(response) {
 
   * [License](#license)
 
-  * [Badges](#badges)
+  * [Badge](#badge)
 
   * [Contributors](#contributors)
 
   * [Tests](#tests)
 
    ## Installation:
-  Run the following command to install the necessary dependencies 
   ${response.installation}
  
   ## Usage:
   ${response.usage}
   
-  ## License 
+  ## License:
   ![GitHub License] {https://img.shields.io/badge/license-${response.license}-blue.svg}
 
-  ## Badges 
+  ## Badge: 
   ![NPM LIcense](https://img.shields.io/badge/License%20-NPM-red)
 
-
-  ## Contribution:
-  ${response.contribution}  
+  ## Contributors:
+  ${response.contributors}  
 
   ## Test:
   ${response.test}
 
-  ## Email:
-  ${response.email}
-
-  ## Github:
-  ${response.github}
-
-  ## Questions 
-  Feel free to email me with any questions at ${response.email} or connect via GitHub at https://github.com/${response.github}
+  ## Questions: 
+  If you have any questions about this project feel free to reach out to me via email at ${response.email}. You can also follow me via GitHub at https://github.com/${response.github}
   `;
   }
   module.exports = generateMarkdown;

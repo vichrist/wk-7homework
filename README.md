@@ -1,7 +1,8 @@
 
-  #  Project Title: Good README Generator 
+  #  Title: Good README Generator
 
-  ## Description: 
+  ## Description
+  To create a command-line application that dynamically generates a professional README.md from user input using the [Inquirer package] of NPM
 
   ## Table of Contents
 
@@ -11,38 +12,30 @@
 
   * [License](#license)
 
-  * [Badges](#badges)
+  * [Badge](#badge)
 
   * [Contributors](#contributors)
 
   * [Tests](#tests)
 
    ## Installation:
-  Run the following command to install the necessary dependencies 
-  
+  From the command prompt terminal enter the following command but with no parenthesis (node). This will check to see if you have NODE.js installed on your local computer. If you need to install NODE.js please visit https://nodejs.org/en/download/ . Once you have installed NODE.js, install the JSON packages by entering the following command without parenthesis (npm init -y). Once you have the package installed you will then enter (npm i inquirer) which installs the NPM dependencies.
  
   ## Usage:
-  This project can be used as a guide to construct a README for any development project 
+  As a guide to construct a professional README.md for any development project
   
-  ## License 
-  ![GitHub License] {https://img.shields.io/badge/license-APACHE 2.8-blue.svg}
+  ## License:
+  ![GitHub License] {https://img.shields.io/badge/license-NPM-blue.svg}
 
-  ## Badges 
+  ## Badge: 
   ![NPM LIcense](https://img.shields.io/badge/License%20-NPM-red)
 
-
-  ## Contribution:
-  undefined  
+  ## Contributors:
+  Christal Vigil   
 
   ## Test:
-  Na
+  In process
 
-  ## Email:
-  c.vigil27@gmail.com
-
-  ## Github:
-  vichrist
-
-  ## Questions 
-  Feel free to email me with any questions at c.vigil27@gmail.com or connect via GitHub at https://github.com/vichrist
+  ## Questions: 
+  If you have any questions about this project feel free to reach out to me via email at c.vigil27@gmail.com. You can also follow me via GitHub at https://github.com/vichrist
   

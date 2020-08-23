@@ -40,6 +40,7 @@ const promptUser = () => {
                 "APACHE 2.8",
                 "GPL 3.0",
                 "BSD 3",
+                "NPM",
                 "NONE"
             ]
         },
